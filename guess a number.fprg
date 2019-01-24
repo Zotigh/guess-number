@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LZ"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-01-24 11:45:38 AM"/>
+        <attribute name="created" value="TFo7REVTS1RPUC1PMjA1VkY5OzIwMTktMDEtMjQ7MDc6NTU6MjMgQU07MjQ2Mg=="/>
+        <attribute name="edited" value="TFo7REVTS1RPUC1PMjA1VkY5OzIwMTktMDEtMjQ7MTE6NDU6MzggQU07MTsyNTcw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="secret" type="Integer" array="False" size=""/>
+            <assign variable="secret" expression="random(100)"/>
+            <declare name="guess" type="Integer" array="False" size=""/>
+            <declare name="reaction" type="String" array="False" size=""/>
+            <do expression="reaction = &quot;y&quot;">
+                <output expression="&quot;Guess a number between 1-100&quot;" newline="True"/>
+                <input variable="guess"/>
+                <if expression="guess = 0">
+                    <then>
+                        <output expression="&quot;Pathetic!&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="guess = secret">
+                            <then>
+                                <output expression="&quot;correct&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="guess &lt; secret">
+                                    <then>
+                                        <output expression="&quot;guess is too low.&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="guess &gt; secret">
+                                            <then>
+                                                <output expression="&quot;guess is too high.&quot;" newline="True"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;play again ?&quot;" newline="True"/>
+                <input variable="reaction"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>
